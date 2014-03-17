@@ -1,0 +1,62 @@
+# aliases
+alias server='ruby -run -e httpd . -p8000'  # Simple Ruby server
+alias reload='. ~/.bash_profile'
+alias ls='ls -G'
+alias cp='cp -iv'                           # Preferred 'cp' implementation
+alias mv='mv -iv'                           # Preferred 'mv' implementation
+alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
+alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
+alias less='less -FSRXc'                    # Preferred 'less' implementation
+alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
+alias which='type -all'                     # which:        Find executables
+alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
+alias myip='curl checkip.amazonaws.com'     # myip:         Public facing IP Address
+mcd () { mkdir -pv "$1" && cd "$1"; }       # mcd:          Makes new Dir and jumps inside
+trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
+ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook
+
+# cleanupDS: Recursively delete .DS_Store files
+alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
+
+# extract: Extract most know archives with one command
+extract () {
+  if [ -f $1 ] ; then
+    case $1 in
+    *.tar.bz2)   tar xjf $1     ;;
+    *.tar.gz)    tar xzf $1     ;;
+    *.bz2)       bunzip2 $1     ;;
+    *.rar)       unrar e $1     ;;
+    *.gz)        gunzip $1      ;;
+    *.tar)       tar xf $1      ;;
+    *.tbz2)      tar xjf $1     ;;
+    *.tgz)       tar xzf $1     ;;
+    *.zip)       unzip $1       ;;
+    *.Z)         uncompress $1  ;;
+    *.7z)        7z x $1        ;;
+    *) echo "'$1' cannot be extracted via extract()" ;;
+     esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# "dev" directory helper with case-insensitive sub-directory tab-completion :)
+function dev() { cd "$HOME/Dev/$1"; }
+complete -C ~/.bash/dev_completion -o filenames -o nospace dev
+
+# Source bash-completion from Homebrew
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+# Browserstack tunnel
+function browserstack() {
+  local port
+  if [ $1 ]; then port=$1; else port=3000; fi
+  java -jar ~/.browserstack.jar vEndj0TYHidxSyRlx8uy localhost,$port,0
+}
+
+#   to create a file of a given size: /usr/sbin/mkfile or /usr/bin/hdiutil
+#   ---------------------------------------
+#   e.g.: mkfile 10m 10MB.dat
+#   e.g.: hdiutil create -size 10m 10MB.dmg
