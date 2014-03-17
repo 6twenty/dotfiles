@@ -1,0 +1,14 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+._*
+
+# Icon must ends with two \r.
+Icon
+
+
+.svn
+*~
+.*.swp

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ln -s ~/.bash/ssh_config ~/.ssh/config
+ln -s ~/.bash/git_config ~/.gitconfig
+ln -s ~/.bash/gitignore ~/.gitignore
