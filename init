@@ -3,3 +3,14 @@
 ln -s ~/.bash/ssh_config ~/.ssh/config
 ln -s ~/.bash/git_config ~/.gitconfig
 ln -s ~/.bash/gitignore ~/.gitignore
+
+if ! grep -Fxq "# Source dotfiles" ~/.bash_profile
+then
+  cat >>~/.bash_profile <<EOL
+
+  # Source dotfiles
+  source ~/.bash/helpers
+  source ~/.bash/config
+  source ~/.bash/prompt
+EOL
+fi
