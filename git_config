@@ -1,0 +1,14 @@
+[user]
+  name = Mike Fulcher
+  email = mike@drawingablank.me
+[alias]
+  co = checkout
+[core]
+  excludesfile = ~/.gitignore
+[push]
+  default = simple
+[branch]
+  autosetuprebase = always
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f

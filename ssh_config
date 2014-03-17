@@ -1,0 +1,39 @@
+# http://blogs.perl.org/users/smylers/2011/08/ssh-productivity-tips.html
+
+# Forward SSH connections to subsequent servers.
+# ForwardAgent yes
+
+# Proxy an SSH connection through an intermediary server.
+# Host db
+#   HostName db.internal.example.com
+#   ProxyCommand ssh gateway -W %h:%p
+
+# Mount a remote directory locally using SSH.
+# $ mkdir gallery_src
+# $ sshfs dev:projects/gallery/src gallery_src
+# $ cd gallery_src
+# $ ls
+
+# SSH port forwarding (port 5433 local maps to 5432 on remote)
+# Host db
+#   LocalForward 5433 localhost:5432
+
+Host *
+  ControlMaster auto
+  ControlPath ~/.ssh/control/%r@%h:%p
+  ControlPersist 10m
+
+# ssh github > ssh git@github.com
+Host github
+  HostName github.com
+  User git
+
+# ssh bitbucket > ssh git@bitbucket.org
+Host bitbucket
+  HostName bitbucket.org
+  User git
+
+# ssh drawingablank > ssh root@drawingablank.me
+Host drawingablank
+  HostName drawingablank.me
+  User root
