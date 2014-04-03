@@ -21,7 +21,7 @@
 Host *
   ControlMaster auto
   ControlPath ~/.ssh/control/%r@%h:%p
-  ControlPersist 10m
+  ControlPersist 1h
 
 # ssh github > ssh git@github.com
 Host github
