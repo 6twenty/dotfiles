@@ -4,6 +4,7 @@ mkdir -p ~/.ssh/control
 ln -s ~/.bash/ssh_config ~/.ssh/config
 ln -s ~/.bash/git_config ~/.gitconfig
 ln -s ~/.bash/gitignore ~/.gitignore
+ln -s ~/.bash/gemrc ~/.gemrc
 
 if ! grep -Fxq "# Source dotfiles" ~/.bash_profile
 then
