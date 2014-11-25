@@ -37,3 +37,9 @@ Host bitbucket
 Host drawingablank
   HostName drawingablank.me
   User root
+
+# ssh diskstation > ssh root@diskstation.local
+Host diskstation
+  HostName diskstation.local
+  User root
+
