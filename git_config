@@ -4,6 +4,9 @@
 [alias]
   co = checkout
   cp = cherry-pick
+  cm = commit
+  st = status -sb
+  sl = log --all --graph --decorate --oneline --abbrev-commit
 [core]
   excludesfile = ~/.gitignore
 [push]
@@ -11,5 +14,8 @@
 [branch]
   autosetuprebase = always
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+[color]
+  ui = 1
