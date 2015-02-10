@@ -1,0 +1,25 @@
+#!/bin/bash
+
+trap cleanup SIGINT
+
+cleanup(){
+  kill $pid_a && kill $pid_b
+  kill 0
+}
+
+connect(){
+  ssh -f -nNT -L 9548:diskstation.local:548 gerty
+  ssh -f -nNT -L 5000:diskstation.local:5000 gerty
+  pid_a=$(ps aux | grep 9548:diskstation.local:548 | grep gerty | head -n1 | awk '{print $2;}')
+  pid_b=$(ps aux | grep 5000:diskstation.local:5000 | grep gerty | head -n1 | awk '{print $2;}')
+  echo "AFP  > localhost:9548"
+  echo "HTTP > localhost:5000"
+  echo "Press Ctrl+C to close the connections"
+  wait
+}
+
+connect
+
+while true; do
+  : # Do nothing
+done
