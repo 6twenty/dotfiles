@@ -18,6 +18,18 @@ ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in Ma
 # cleanupDS: Recursively delete .DS_Store files
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 
+# Special PocketSmith shortcut
+function workmode() {
+  open "/Applications/Mailbox (Beta).app"
+  open "/Applications/Flowdock.app"
+  open "/Applications/Flamingo.app"
+  open "/Applications/Twitter.app"
+  dev PocketSmith/pocketsmith
+  sleep 1s
+  github
+  subl .
+}
+
 # extract: Extract most know archives with one command
 extract () {
   if [ -f $1 ] ; then
