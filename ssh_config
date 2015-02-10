@@ -1,7 +1,7 @@
 # http://blogs.perl.org/users/smylers/2011/08/ssh-productivity-tips.html
 
 # Forward SSH connections to subsequent servers.
-# ForwardAgent yes
+ForwardAgent yes
 
 # Proxy an SSH connection through an intermediary server.
 # Host db
@@ -18,10 +18,10 @@
 # Host db
 #   LocalForward 5433 localhost:5432
 
-Host *
-  ControlMaster auto
-  ControlPath ~/.ssh/control/%r@%h:%p
-  ControlPersist 1h
+# Host *
+#   ControlMaster auto
+#   ControlPath ~/.ssh/control/%r@%h:%p
+#   ControlPersist 1h
 
 # ssh github > ssh git@github.com
 Host github
@@ -42,4 +42,9 @@ Host drawingablank
 Host diskstation
   HostName diskstation.local
   User root
+
+# ssh gerty > ssh gerty@gerty.local
+Host gerty
+  HostName gerty.local
+  User gerty
 
