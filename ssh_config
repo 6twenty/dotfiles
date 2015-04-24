@@ -8,12 +8,6 @@ ForwardAgent yes
 #   HostName db.internal.example.com
 #   ProxyCommand ssh gateway -W %h:%p
 
-# Mount a remote directory locally using SSH.
-# $ mkdir gallery_src
-# $ sshfs dev:projects/gallery/src gallery_src
-# $ cd gallery_src
-# $ ls
-
 # SSH port forwarding (port 5433 local maps to 5432 on remote)
 # Host db
 #   LocalForward 5433 localhost:5432
@@ -38,10 +32,12 @@ Host drawingablank
   HostName drawingablank.me
   User root
 
-# ssh diskstation > ssh root@diskstation.local
+# Requires SSH tunnel through gerty ->
+# ssh diskstation > ssh admin@localhost -p 9022
 Host diskstation
-  HostName diskstation.local
-  User root
+  HostName localhost
+  User admin
+  Port 9022
 
 # ssh gerty > ssh gerty@gerty.local
 Host gerty
