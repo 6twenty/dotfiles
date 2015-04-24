@@ -1,7 +1,7 @@
 export EDITOR="subl -w"
 export BUNDLER_EDITOR="subl"
 export GEM_EDITOR="subl"
-export CC=gcc-4.2
+export CC=gcc
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export BLOCKSIZE=1k
