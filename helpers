@@ -30,7 +30,7 @@ function workmode() {
   open "/Applications/Flowdock.app"
   dev PocketSmith/pocketsmith
   github
-  subl .
+  RBENV_VERSION=system atom .
 }
 
 # extract: Extract most know archives with one command

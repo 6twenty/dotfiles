@@ -1,6 +1,6 @@
-export EDITOR="subl -w"
-export BUNDLER_EDITOR="subl"
-export GEM_EDITOR="subl"
+export EDITOR="atom -w"
+export BUNDLER_EDITOR="atom"
+export GEM_EDITOR="atom"
 export CC=gcc
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
