@@ -27,7 +27,9 @@ alias diskstation="~/.bash/diskstation"
 
 # Work mode
 function workmode() {
-  open "/Applications/Flowdock.app"
+  open -a Twitter
+  open -a Flowdock
+  open -a Clear
   dev PocketSmith/pocketsmith
   github
   RBENV_VERSION=system atom .
