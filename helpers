@@ -22,6 +22,9 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
 # cleanupDS: Recursively delete .DS_Store files
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 
+# Open iTunes (silently) on Gerty
+alias itunes="ssh gerty 'open -a iTunes -g'"
+
 # Set up tunnels to connect to Diskstation over SSH, AFP, and HTTP
 alias diskstation="~/.bash/diskstation"
 
