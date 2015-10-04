@@ -5,6 +5,7 @@ ln -s ~/.bash/ssh_config ~/.ssh/config
 ln -s ~/.bash/git_config ~/.gitconfig
 ln -s ~/.bash/gitignore ~/.gitignore
 ln -s ~/.bash/gemrc ~/.gemrc
+ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" ~/.bin/diff-highlight
 
 if ! grep -Fxq "# Source dotfiles" ~/.bash_profile
 then
