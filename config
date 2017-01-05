@@ -1,7 +1,9 @@
-export EDITOR="atom -w"
+export EDITOR="atom -n -w"
 export BUNDLER_EDITOR="atom"
 export GEM_EDITOR="atom"
 export CC=gcc
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export BLOCKSIZE=1k
+export HISTFILESIZE=-1
+export HISTSIZE=-1

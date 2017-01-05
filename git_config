@@ -1,53 +1,53 @@
 [user]
   name = Mike Fulcher
-  email = mike@drawingablank.me
+  email = michael.fulcher@gmail.com
 [alias]
   co = checkout
   cp = cherry-pick
   cm = commit
   st = status -sb
   sl = log --all --graph --decorate --oneline --abbrev-commit
-	logline = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  logline = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 #  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
 #  bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
 [core]
   excludesfile = ~/.gitignore
-	editor = atom -n -w
   # insanely beautiful diffs
   pager = bash -lc 'diff-highlight | strip_diff_leading_symbols | less -r' -
+  editor = atom -n -w
 [push]
   default = simple
 [branch]
   autosetuprebase = always
 [filter "media"]
   required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+  clean = git media clean %f
+  smudge = git media smudge %f
 [color]
   ui = 1
 [filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+  clean = git hawser clean %f
+  smudge = git hawser smudge %f
+  required = true
 [filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
+  clean = git lfs clean %f
+  smudge = git lfs smudge %f
+  required = true
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+  current = yellow reverse
+  local = yellow
+  remote = green
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+  added = yellow
+  changed = green
+  untracked = cyan
 [color "diff-highlight"]
-	oldNormal = "red bold"
-	oldHighlight = "red bold 52"
-	newNormal = "green bold"
-	newHighlight = "green bold 22"
+  oldNormal = "red bold"
+  oldHighlight = "red bold 52"
+  newNormal = "green bold"
+  newHighlight = "green bold 22"

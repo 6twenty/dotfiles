@@ -17,29 +17,17 @@ ForwardAgent yes
 #   ControlPath ~/.ssh/control/%r@%h:%p
 #   ControlPersist 1h
 
-# ssh github > ssh git@github.com
+# ssh git@github.com
 Host github
   HostName github.com
   User git
 
-# ssh bitbucket > ssh git@bitbucket.org
+# ssh git@bitbucket.org
 Host bitbucket
   HostName bitbucket.org
   User git
 
-# ssh drawingablank > ssh root@drawingablank.me
-Host drawingablank
-  HostName drawingablank.me
-  User root
-
-# Requires SSH tunnel through gerty ->
-# ssh diskstation > ssh admin@localhost -p 9022
-Host diskstation
-  HostName localhost
-  User admin
-  Port 9022
-
-# ssh gerty > ssh gerty@gerty.local
+# ssh gerty@gerty.local
 Host gerty
   HostName gerty.local
   User gerty

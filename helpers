@@ -4,7 +4,6 @@
 #   e.g.: hdiutil create -size 10m 10MB.dmg
 
 # aliases
-alias server='ruby -run -e httpd . -p8000'  # Simple Ruby server
 alias reload='. ~/.bash_profile'
 alias ls='ls -G'
 alias cp='cp -iv'                           # Preferred 'cp' implementation
@@ -18,6 +17,7 @@ alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable 
 alias myip='curl checkip.amazonaws.com'     # myip:         Public facing IP Address
 mcd () { mkdir -pv "$1" && cd "$1"; }       # mcd:          Makes new Dir and jumps inside
 trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
+serve () { ruby -run -e httpd "$1" -p9090; }
 
 # cleanupDS: Recursively delete .DS_Store files
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
@@ -25,17 +25,18 @@ alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 # Open iTunes (silently) on Gerty
 alias itunes="ssh gerty 'open -a iTunes -g'"
 
-# Set up tunnels to connect to Diskstation over SSH, AFP, and HTTP
-alias diskstation="~/.bash/diskstation"
-
 # Work mode
 function workmode() {
-  open -a Twitter
-  open -a Flowdock
-  open -a Clear
+  open -a 'Flowdock'
+  open -a 'Spotify' -g
+  open -a 'GitHub Desktop' -g
+  open https://planner-6059a.firebaseapp.com -g
   dev PocketSmith/pocketsmith
-  github
-  RBENV_VERSION=system atom .
+  atom .
+  sleep 5
+  osascript -e 'tell application "System Events"
+    key code 123 using control down
+  end tell'
 }
 
 # For git diff: strips leading "+" and "-"
