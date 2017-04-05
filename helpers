@@ -27,11 +27,11 @@ alias itunes="ssh gerty 'open -a iTunes -g'"
 
 # Work mode
 function workmode() {
-  open -a 'Flowdock'
-  open -a 'Spotify' -g
-  open -a 'GitHub Desktop' -g
-  open https://planner-6059a.firebaseapp.com -g
   dev PocketSmith/pocketsmith
+  open https://planner-6059a.firebaseapp.com -g
+  open -a 'Spotify' -g
+  open -a 'GitHub Desktop' -g .
+  open -a 'Slack'
   atom .
   sleep 5
   osascript -e 'tell application "System Events"
