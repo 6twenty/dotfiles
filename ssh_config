@@ -17,6 +17,11 @@ ForwardAgent yes
 #   ControlPath ~/.ssh/control/%r@%h:%p
 #   ControlPersist 1h
 
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+
 Host github
   HostName github.com
   User git
