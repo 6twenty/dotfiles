@@ -17,17 +17,14 @@ ForwardAgent yes
 #   ControlPath ~/.ssh/control/%r@%h:%p
 #   ControlPersist 1h
 
-# ssh git@github.com
 Host github
   HostName github.com
   User git
 
-# ssh git@bitbucket.org
 Host bitbucket
   HostName bitbucket.org
   User git
 
-# ssh gerty@gerty.local
 Host gerty
   HostName gerty.local
   User gerty
