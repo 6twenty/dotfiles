@@ -22,23 +22,6 @@ serve () { ruby -run -e httpd "$1" -p9090; }
 # cleanupDS: Recursively delete .DS_Store files
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 
-# Open iTunes (silently) on Gerty
-alias itunes="ssh gerty 'open -a iTunes -g'"
-
-# Work mode
-function workmode() {
-  dev PocketSmith/pocketsmith
-  open https://planner-6059a.firebaseapp.com -g
-  open -a 'Spotify' -g
-  open -a 'GitHub Desktop' -g .
-  open -a 'Slack'
-  atom .
-  sleep 5
-  osascript -e 'tell application "System Events"
-    key code 123 using control down
-  end tell'
-}
-
 # For git diff: strips leading "+" and "-"
 function strip_diff_leading_symbols() {
 	color_code_regex="(\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K])"
